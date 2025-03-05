@@ -11,11 +11,11 @@ namespace Vizvezetek.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class munkalapController : ControllerBase
+    public class munkalapokController : ControllerBase
     {
         private readonly vizvezetekContext _context;
 
-        public munkalapController(vizvezetekContext context)
+        public munkalapokController(vizvezetekContext context)
         {
             _context = context;
         }

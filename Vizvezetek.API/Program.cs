@@ -20,6 +20,7 @@ namespace Vizvezetek.API
             // Configure the HTTP request pipeline.
 
             app.UseAuthorization();
+            
 
 
             app.MapControllers();

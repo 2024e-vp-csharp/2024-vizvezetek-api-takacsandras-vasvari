@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Vizvezetek.API.Models;
 
 namespace Vizvezetek.API
@@ -11,7 +12,8 @@ namespace Vizvezetek.API
             // Add services to the container.
 
             builder.Services.AddControllers();
-            builder.Services.AddDbContext<vizvezetekContext>();
+            builder.Services.AddDbContext<vizvezetekContext>(options =>
+                options.UseMySql(builder.Configuration.GetConnectionString("VizvezetekDB"), ServerVersion.Parse("10.4.28-mariadb")));
 
             var app = builder.Build();
 

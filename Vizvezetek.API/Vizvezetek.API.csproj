@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="DTOs\" />
     <None Remove="Controllers\.gitkeep" />
-	<Folder Include="Controllers\" />
   </ItemGroup>
 
   <ItemGroup>

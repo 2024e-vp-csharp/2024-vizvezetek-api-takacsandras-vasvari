@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Vizvezetek.API.Models;
+using Vizvezetek.API.DTOs;
 
 namespace Vizvezetek.API.Controllers
 {
@@ -22,10 +23,15 @@ namespace Vizvezetek.API.Controllers
 
         // GET: api/munkalap
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<munkalap>>> Getmunkalap()
+        public async Task<ActionResult<IEnumerable<FormatDTO>>> Getmunkalap()
         {
-            return await _context.munkalap.ToListAsync();
+            var munkalap = await _context.munkalap.Include(x => x.hely).Include(x => x.szerelo).ToListAsync();
+            List<FormatDTO> munkalapDTO = new();
+            //TODO: lista feltöltés
+            return munkalapDTO;
+
         }
+
 
         // GET: api/munkalap/5
         [HttpGet("{id}")]

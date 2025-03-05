@@ -15,7 +15,7 @@ namespace Vizvezetek.API.DTOs
             this.anyagar = anyagar;
         }
 
-        public int id { get; set; }
+            public int id { get; set; }
             public DateTime beadas_datum { get; set; }
             public DateTime javitas_datum { get; set; }
             public string helyszin  { get ; set; }

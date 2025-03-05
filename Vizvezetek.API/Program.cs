@@ -1,3 +1,5 @@
+using Vizvezetek.API.Models;
+
 namespace Vizvezetek.API
 {
     public class Program
@@ -9,6 +11,7 @@ namespace Vizvezetek.API
             // Add services to the container.
 
             builder.Services.AddControllers();
+            builder.Services.AddDbContext<vizvezetekContext>();
 
             var app = builder.Build();
 
